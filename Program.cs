@@ -36,7 +36,7 @@ public class TicTacToeGame
         ShowBoard();
         while (round < 10)
         {
-            
+            // win checks based on if all tiles match a certain token 
             if (WinCheck(Token.X) == true )
             {
                 Console.WriteLine($" {Token.X} has won!");
@@ -61,7 +61,7 @@ public class TicTacToeGame
         Console.WriteLine("\nThe game has ended in a draw!");
         ShowBoard();
     }
-
+    // will set value in baord array based on current players token (x,o) will repeat if tile is not empty
     public Token PickTile(Player currentPlayer)
     {
         while(true)
@@ -137,16 +137,19 @@ public class TicTacToeGame
             Console.WriteLine("---+---+---");
             Console.WriteLine($" {SwitchCharacter(board.GetCellAt(2, 0))} | {SwitchCharacter(board.GetCellAt(2, 1))} | {SwitchCharacter(board.GetCellAt(2, 2))}");
         }
+    // replaces the enum Token types to chars instead so that empty is not printed instead of a blank tile
         private char SwitchCharacter(Token cell) => cell switch { Token.X => 'X', Token.O => 'O', Token.Empty => ' ' };
 }
 
 
 public class Board
     {
+    // an enum array of tic tac toe board 
         private  Token[,] Cells = new Token[3, 3];
+    // getter method for token array to controll accesses 
         public Token GetCellAt(int row, int column) => Cells[row, column];
-
-        public Token SetCellAt(int row, int column, Token newValue) => Cells[row, column] = newValue;
+    // setter method for token array to controll accesses 
+    public Token SetCellAt(int row, int column, Token newValue) => Cells[row, column] = newValue;
     }
 
 public class Player
