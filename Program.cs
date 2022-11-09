@@ -3,7 +3,7 @@
 
 Console.WriteLine(" Welcome to Tic Tac Toe");
 Console.WriteLine(" The game is two player with player 1 being X and Player 2 being O");
-Console.WriteLine("The tile locations are based of the numpad");
+Console.WriteLine("The tile locations are based on the numpad");
 Console.WriteLine($" 7 | 8 | 9 ");
 Console.WriteLine("---+---+---");
 Console.WriteLine($" 4 | 5 | 6 ");
@@ -53,7 +53,7 @@ public class TicTacToeGame
 
             ShowBoard();
 
-            Console.Clear();
+           
 
             currentPlayer = currentPlayer ==  player1? player2 : player1;
             round++;
